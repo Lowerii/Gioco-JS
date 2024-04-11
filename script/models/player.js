@@ -59,20 +59,18 @@ class Player extends Hitbox {
     }
 
     draw(ctx) {
-        if(this.health > 0) {
-            ctx.drawImage(this.images[this.currentImageIndex], this.position.x, 
-                ctx.canvas.clientHeight - this.position.y, 
-                175, 175);
-            ctx.font = "30px Verdana";
-            ctx.fillStyle = "white";
-            ctx.fillText(this.name, this.position.x + 50, (ctx.canvas.clientHeight - (this.position.y + 35)));
-            ctx.fillStyle = "red";  
-            ctx.fillRect(this.position.x, (ctx.canvas.clientHeight - (this.position.y + 20)), 168, 10);
-            ctx.fillStyle = "green";  
-            ctx.fillRect(this.position.x, (ctx.canvas.clientHeight - (this.position.y + 20)), (this.health * 168) / 100 , 10);
-    
-            super.draw(ctx);
-        }         
+        ctx.drawImage(this.images[this.currentImageIndex], this.position.x, 
+            ctx.canvas.clientHeight - this.position.y, 
+            175, 175);
+        ctx.font = "30px Verdana";
+        ctx.fillStyle = "white";
+        ctx.fillText(this.name, this.position.x + 50, (ctx.canvas.clientHeight - (this.position.y + 35)));
+        ctx.fillStyle = "red";  
+        ctx.fillRect(this.position.x, (ctx.canvas.clientHeight - (this.position.y + 20)), 168, 10);
+        ctx.fillStyle = "green";  
+        ctx.fillRect(this.position.x, (ctx.canvas.clientHeight - (this.position.y + 20)), (this.health * 168) / 100 , 10);
+
+        super.draw(ctx);        
     }
     
     removeHealth(health) {

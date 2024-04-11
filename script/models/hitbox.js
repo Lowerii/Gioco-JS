@@ -24,7 +24,9 @@ class Hitbox {
         if(this.intersection(this.position, other) || 
         this.intersection(new Vector2D(this.position.x + this.width , this.position.y), other) ||
         this.intersection(new Vector2D(this.position.x + this.width , this.position.y - this.height), other) ||
-        this.intersection(new Vector2D(this.position.x , this.position.y - this.height), other) 
+        this.intersection(new Vector2D(this.position.x , this.position.y - this.height), other) ||
+        this.intersection(new Vector2D(this.position.x + this.width / 2 , this.position.y - this.height), other) ||
+        this.intersection(new Vector2D(this.position.x + this.width / 2, this.position.y), other) 
         ){
             return true;
         }
